@@ -9,7 +9,7 @@ async function main() {
 
   // ✅ Update this with your new deployed contract address
   const remittanceAddress = "0x358AA13c52544ECCEF6B0ADD0f801012ADAD5eE3"; // Update after redeployment
-  const tokenAddress = "0xfA0e305E0f46AB04f00ae6b5f4560d61a2183E00"; // USDC on Arbitrum Sepolia
+  const tokenAddress = "0x980B62Da83eFf3D4576C647993b0c1D7faf17c73"; // USDC on Arbitrum Sepolia
   const recipient = "0xb614AFA3D36d2914072cb2B1bf6CD204c4087ECD";
   const amount = ethers.parseUnits("0.001", 6); // 0.001 USDC for better yield visibility
 
@@ -55,7 +55,7 @@ async function main() {
       recipient,
       amount,
       {
-        gasLimit: 500000,
+        gasLimit: 100000,
       }
     );
     const receipt = await depositTx.wait();
