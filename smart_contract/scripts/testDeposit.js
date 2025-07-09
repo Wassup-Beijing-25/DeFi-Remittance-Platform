@@ -9,7 +9,7 @@ async function main() {
 
   // ✅ Update this with your new deployed contract address
   const remittanceAddress = "0x358AA13c52544ECCEF6B0ADD0f801012ADAD5eE3"; // Update after redeployment
-  const tokenAddress = "0x980B62Da83eFf3D4576C647993b0c1D7faf17c73"; // USDC on Arbitrum Sepolia
+  const tokenAddress = "0xb1D4538B4571d411F07960EF2838Ce337FE1E80E"; // USDC on Arbitrum Sepolia
   const recipient = "0xb614AFA3D36d2914072cb2B1bf6CD204c4087ECD";
   const amount = ethers.parseUnits("0.001", 6); // 0.001 USDC for better yield visibility
 
