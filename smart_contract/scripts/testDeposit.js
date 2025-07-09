@@ -10,8 +10,8 @@ async function main() {
   // ✅ Update this with your new deployed contract address
   const remittanceAddress = "0x358AA13c52544ECCEF6B0ADD0f801012ADAD5eE3"; // Update after redeployment
   const tokenAddress = "0xb1D4538B4571d411F07960EF2838Ce337FE1E80E"; // USDC on Arbitrum Sepolia
-  const recipient = "0xb614AFA3D36d2914072cb2B1bf6CD204c4087ECD";
-  const amount = ethers.parseUnits("0.001", 6); // 0.001 USDC for better yield visibility
+  const recipient = "0x27C1E4ddA1016FBeF2Dca3Ce0ACb7caE99C6Ed00";
+  const amount = ethers.parseUnits("0.00001", 6); // 0.001 USDC for better yield visibility
 
   // ✅ ERC20 ABI
   const ERC20_ABI = [
@@ -55,7 +55,7 @@ async function main() {
       recipient,
       amount,
       {
-        gasLimit: 100000,
+        gasLimit: 1000,
       }
     );
     const receipt = await depositTx.wait();
