@@ -1,4 +1,2 @@
 const { getAddress } = require("ethers");
-
-const checksummed = getAddress("0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e");
-console.log(checksummed);
+console.log(getAddress("0xB6EBdFFccfB1D8F3d50DD9fdcA7c30B4123fD41e"));

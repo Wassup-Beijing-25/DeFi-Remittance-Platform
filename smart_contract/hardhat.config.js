@@ -1,15 +1,36 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const ARBITRUM_SEPOLIA_RPC = process.env.ARBITRUM_SEPOLIA_RPC;
+
 module.exports = {
-  solidity: "0.8.20",
+  solidity: {
+    version: "0.8.20",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
   networks: {
-    mumbai: {
-      url: process.env.MUMBAI_RPC,
-      accounts: [process.env.PRIVATE_KEY],
+    "arbitrum-sepolia": {
+      url: ARBITRUM_SEPOLIA_RPC,
+      accounts: [PRIVATE_KEY],
+      gasPrice: 100000000, // 0.1 gwei
+      gas: 2000000,
+    },
+    hardhat: {
+      forking: {
+        url: ARBITRUM_SEPOLIA_RPC,
+        blockNumber: undefined, // Use latest block
+      },
     },
   },
   etherscan: {
-    apiKey: process.env.POLYGONSCAN_API_KEY,
+    apiKey: {
+      arbitrumSepolia: "YourArbitrumSepoliaApiKey", // Get from arbiscan.io
+    },
   },
 };
